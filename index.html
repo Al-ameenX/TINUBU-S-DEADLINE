@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Political Countdown Tracker - Nigeria</title>
+    <title>Nigeria Election Intelligence Hub 2027</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -33,108 +33,39 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #f5f5f5 0%, #f0f0f0 100%);
         }
 
-        /* Animated Background Container */
-        .bg-animated {
+        /* Animated Background */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #f5f5f5 0%, #f0f0f0 100%);
-            z-index: -2;
-            overflow: hidden;
-        }
-
-        /* Animated gradient background */
-        .bg-gradient {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                rgba(0, 135, 81, 0.08) 0%,
-                rgba(212, 162, 87, 0.05) 25%,
-                rgba(0, 135, 81, 0.08) 50%,
-                rgba(212, 162, 87, 0.05) 75%,
-                rgba(0, 135, 81, 0.08) 100%
-            );
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 135, 81, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 135, 81, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
             animation: gradientShift 15s ease infinite;
         }
 
         @keyframes gradientShift {
-            0%, 100% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            50% {
-                transform: translate(-50px, -50px) rotate(180deg);
-            }
-        }
-
-        /* Floating particles */
-        .particle {
-            position: absolute;
-            pointer-events: none;
-        }
-
-        .particle-dot {
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 135, 81, 0.1);
-            border-radius: 50%;
-            animation: float linear infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
-        }
-
-        /* Animated grid pattern */
-        .bg-grid {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(45deg, transparent 48%, rgba(0, 135, 81, 0.02) 49%, rgba(0, 135, 81, 0.02) 51%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(0, 135, 81, 0.02) 49%, rgba(0, 135, 81, 0.02) 51%, transparent 52%);
-            background-size: 80px 80px;
-            animation: gridShift 20s linear infinite;
-        }
-
-        @keyframes gridShift {
-            0% {
-                background-position: 0 0, 0 0;
-            }
-            100% {
-                background-position: 80px 80px, 80px 80px;
-            }
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, -30px); }
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, var(--nigeria-green) 0%, var(--dark-green) 100%);
             color: var(--nigeria-white);
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0, 135, 81, 0.2);
-            z-index: 10;
         }
 
         header::before {
@@ -159,74 +90,77 @@
             z-index: 2;
         }
 
-        .header-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(2rem, 8vw, 3.5rem);
             font-weight: 900;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            animation: slideDown 0.8s ease-out 0.1s both;
+            margin-bottom: 0.5rem;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .subtitle {
-            font-size: clamp(1rem, 3vw, 1.3rem);
+        .tagline {
+            font-size: 1.1rem;
             font-weight: 300;
             opacity: 0.95;
-            margin-bottom: 0.5rem;
-            animation: slideDown 0.8s ease-out 0.2s both;
         }
 
-        .sub-subtitle {
-            font-size: 0.95rem;
-            opacity: 0.85;
-            font-weight: 400;
-            animation: slideDown 0.8s ease-out 0.3s both;
-            margin-top: 0.5rem;
+        /* Quick Stats Bar */
+        .quick-stats {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 135, 81, 0.2);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: -2rem 2rem 0 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 135, 81, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            color: var(--nigeria-green);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         /* Main Container */
         main {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 2rem;
-            position: relative;
-            z-index: 5;
         }
 
-        /* Countdown Section */
-        .countdown-section {
-            background: var(--nigeria-white);
+        /* Glassmorphism Base */
+        .glass-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 20px;
-            padding: 4rem 2rem;
-            margin-bottom: 4rem;
-            box-shadow: 0 20px 60px rgba(0, 135, 81, 0.08);
-            border: 2px solid var(--light-green);
-            animation: fadeInUp 1s ease-out;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 135, 81, 0.1);
+            animation: fadeInUp 0.8s ease-out;
         }
 
         @keyframes fadeInUp {
@@ -240,6 +174,17 @@
             }
         }
 
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: var(--nigeria-green);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        /* Countdown Section */
         .countdown-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -248,13 +193,6 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        @media (max-width: 768px) {
-            .countdown-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
         }
 
         .countdown-unit {
@@ -266,28 +204,11 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            cursor: pointer;
-        }
-
-        .countdown-unit::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .countdown-unit.updated::before {
-            left: 100%;
         }
 
         .countdown-unit:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 135, 81, 0.15);
-            border-color: var(--accent-gold);
         }
 
         .countdown-number {
@@ -297,12 +218,6 @@
             color: var(--nigeria-green);
             display: block;
             margin-bottom: 0.5rem;
-            animation: pulse 0.5s ease-out;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
         }
 
         .countdown-label {
@@ -313,44 +228,338 @@
             letter-spacing: 1px;
         }
 
-        /* States Grid Section */
-        .states-section {
-            background: var(--nigeria-white);
-            border-radius: 20px;
-            padding: 4rem 2rem;
-            margin-bottom: 4rem;
-            box-shadow: 0 20px 60px rgba(0, 135, 81, 0.08);
-            border: 2px solid var(--light-green);
-            animation: fadeInUp 1.2s ease-out;
+        /* Educational Overlay */
+        .educational-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            animation: fadeInOverlay 0.5s ease-out forwards;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+        @keyframes fadeInOverlay {
+            to {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .educational-overlay.hide {
+            animation: fadeOutOverlay 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeOutOverlay {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .educational-content {
+            background: var(--nigeria-white);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--nigeria-green);
+            animation: slideUpContent 0.6s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideUpContent {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-educational {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .close-educational:hover {
             color: var(--nigeria-green);
-            margin-bottom: 2.5rem;
-            text-align: center;
+        }
+
+        .edu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--nigeria-green);
+            margin-bottom: 1.5rem;
             font-weight: 900;
+        }
+
+        .edu-section {
+            margin-bottom: 2rem;
+        }
+
+        .edu-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .edu-stat {
+            background: var(--light-green);
+            padding: 1rem;
+            border-left: 4px solid var(--nigeria-green);
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .edu-source {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .edu-source a {
+            color: var(--nigeria-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Regional Map */
+        .regional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .regional-zone {
+            background: linear-gradient(135deg, var(--light-green) 0%, rgba(212, 162, 87, 0.05) 100%);
+            border: 2px solid var(--nigeria-green);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .regional-zone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .regional-zone:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 135, 81, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .regional-zone:hover::before {
+            left: 100%;
+        }
+
+        .zone-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--nigeria-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .zone-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .zone-tooltip {
+            background: var(--nigeria-green);
+            color: white;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .regional-zone:hover .zone-tooltip {
+            opacity: 1;
+            max-height: 100px;
+            margin-top: 0.5rem;
+        }
+
+        /* Party Directory Grid */
+        .party-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .party-card {
+            background: linear-gradient(135deg, var(--light-green) 0%, rgba(212, 162, 87, 0.05) 100%);
+            border: 2px solid var(--nigeria-green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .party-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 135, 81, 0.15);
+            border-color: var(--accent-gold);
+            background: linear-gradient(135deg, rgba(0, 135, 81, 0.15) 0%, rgba(212, 162, 87, 0.08) 100%);
+        }
+
+        .party-initials {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--nigeria-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .party-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        /* INEC Tracker */
+        .inec-tracker {
+            background: linear-gradient(135deg, var(--light-green) 0%, rgba(212, 162, 87, 0.05) 100%);
+            border: 2px solid var(--nigeria-green);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tracker-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--nigeria-green);
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .tracker-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .tracker-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-btn {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--nigeria-green) 0%, var(--dark-green) 100%);
+            color: var(--nigeria-white);
+            box-shadow: 0 10px 30px rgba(0, 135, 81, 0.3);
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 135, 81, 0.4);
+        }
+
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+
+        .cta-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* States Section */
+        .states-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 135, 81, 0.1);
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .states-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .states-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .states-grid {
-                grid-template-columns: repeat(1, 1fr);
-            }
         }
 
         .state-tag {
@@ -381,17 +590,11 @@
             transition: width 0.6s ease, height 0.6s ease;
         }
 
-        .state-tag:hover::after {
-            width: 300px;
-            height: 300px;
-        }
-
         .state-tag:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 135, 81, 0.15);
             border-color: var(--accent-gold);
             color: var(--dark-green);
-            font-weight: 700;
         }
 
         .state-tag span {
@@ -399,81 +602,7 @@
             z-index: 2;
         }
 
-        /* Action Buttons */
-        .action-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 3rem;
-            animation: fadeInUp 1.4s ease-out;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s ease;
-            z-index: 1;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn span, .btn i {
-            position: relative;
-            z-index: 2;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--nigeria-green) 0%, var(--dark-green) 100%);
-            color: var(--nigeria-white);
-            box-shadow: 0 10px 30px rgba(0, 135, 81, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 135, 81, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--nigeria-white);
-            color: var(--nigeria-green);
-            border: 2px solid var(--nigeria-green);
-            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: var(--light-green);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 135, 81, 0.2);
-        }
-
-        /* Modal Styles */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -547,7 +676,7 @@
             padding-right: 2rem;
         }
 
-        .stat-item {
+        .stat-item-modal {
             margin-bottom: 1.5rem;
             padding: 1rem;
             background: var(--light-green);
@@ -555,7 +684,7 @@
             border-left: 4px solid var(--nigeria-green);
         }
 
-        .stat-label {
+        .stat-label-modal {
             font-size: 0.85rem;
             color: var(--text-light);
             text-transform: uppercase;
@@ -564,73 +693,109 @@
             margin-bottom: 0.5rem;
         }
 
-        .stat-value {
+        .stat-value-modal {
             font-size: 1.5rem;
             color: var(--nigeria-green);
             font-weight: 700;
             font-family: 'Playfair Display', serif;
         }
 
-        /* Alert Setting Modal */
-        .alert-modal-content {
-            max-width: 400px;
+        /* Alert Banner */
+        .alert-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            animation: slideDown 0.4s ease-out;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
         }
 
-        .alert-option {
-            padding: 0.75rem;
-            margin-bottom: 0.75rem;
-            border: 2px solid var(--light-green);
-            border-radius: 8px;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .action-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-align: center;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .alert-option:hover {
-            border-color: var(--nigeria-green);
-            background: var(--light-green);
-        }
-
-        .alert-option.selected {
-            border-color: var(--nigeria-green);
-            background: var(--nigeria-green);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--text-dark) 0%, #2a2a2a 100%);
-            color: var(--nigeria-white);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 5rem;
-            border-top: 3px solid var(--nigeria-green);
-            position: relative;
-            z-index: 10;
-        }
-
-        .footer-disclaimer {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 1rem;
-            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .footer-note {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            font-weight: 400;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1;
         }
 
-        .footer-divider {
-            width: 60px;
-            height: 3px;
-            background: var(--nigeria-green);
-            margin: 1rem auto;
-            border-radius: 2px;
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn span, .btn i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--nigeria-green) 0%, var(--dark-green) 100%);
+            color: var(--nigeria-white);
+            box-shadow: 0 10px 30px rgba(0, 135, 81, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 135, 81, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--nigeria-white);
+            color: var(--nigeria-green);
+            border: 2px solid var(--nigeria-green);
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 135, 81, 0.2);
         }
 
         /* Toast Notification */
@@ -670,18 +835,171 @@
             }
         }
 
-        /* Alert Banner */
-        .alert-banner {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        /* Slideshow Sidebar */
+        .slideshow-sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--nigeria-green) 0%, var(--dark-green) 100%);
             color: white;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            animation: slideDown 0.4s ease-out;
+            padding: 2rem;
+            overflow-y: auto;
+            z-index: 999;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .slideshow-sidebar.hidden {
+            transform: translateX(100%);
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-close:hover {
+            color: #d4a257;
+        }
+
+        .sidebar-close:hover {
+            color: #d4a257;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeInSlide 0.8s ease-out;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
+        }
+
+        .slide-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-stat {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #d4a257;
+        }
+
+        .slide-source {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-source a {
+            color: #d4a257;
+            text-decoration: none;
             font-weight: 600;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1000;
+        }
+
+        .slide-nav {
+            position: fixed;
+            bottom: 4.5rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+
+        .slide-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .slide-dot.active {
+            background: #d4a257;
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #2a2a2a 100%);
+            color: var(--nigeria-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            border-top: 3px solid var(--nigeria-green);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
         }
 
         /* Responsive */
@@ -690,29 +1008,64 @@
                 padding: 2rem 1rem;
             }
 
-            .countdown-section {
+            .slideshow-sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                max-height: 60vh;
+                margin-top: 2rem;
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .slide {
+                min-height: auto;
+                padding: 1rem 0;
+            }
+
+            .slide-counter {
+                position: static;
+                margin-top: 1rem;
+                margin-bottom: 0;
+                display: inline-block;
+            }
+
+            .slide-nav {
+                position: static;
+                justify-content: center;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .quick-stats {
+                margin: -1.5rem 1rem 0 1rem;
+                gap: 1rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .glass-section {
                 padding: 2rem 1.5rem;
             }
 
-            .states-section {
-                padding: 2rem 1.5rem;
+            .regional-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .party-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tracker-buttons {
+                grid-template-columns: 1fr;
             }
 
             .countdown-grid {
-                gap: 0.75rem;
-            }
-
-            header {
-                padding: 2rem 1.5rem;
-            }
-
-            .action-section {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
 
-            .btn {
-                padding: 0.9rem 1.8rem;
-                font-size: 0.9rem;
+            .states-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
             }
 
             .toast {
@@ -726,32 +1079,55 @@
                 width: 95%;
                 padding: 2rem 1.5rem;
             }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            .action-section {
+                gap: 0.75rem;
+            }
+
+            .btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="bg-animated">
-        <div class="bg-gradient"></div>
-        <div class="bg-grid"></div>
-    </div>
-
     <header>
-        <div class="header-badge">
-            <i class="fas fa-hourglass-start"></i> Democratic Countdown
-        </div>
-        <h1>Time Remaining Until the Presidential Transition</h1>
-        <p class="subtitle"><strong>Counting Down to Change</strong></p>
-        <p class="sub-subtitle">Counting down the days, hours, and minutes until Tinubu's term concludes.</p>
+        <h1>🇳🇬 Nigeria Election Intelligence Hub</h1>
+        <p class="tagline">2027 Presidential Election Dashboard & Countdown Tracker</p>
     </header>
 
     <main>
+        <!-- Quick Stats Bar -->
+        <div class="quick-stats">
+            <div class="stat-item">
+                <span class="stat-value">93.5M</span>
+                <span class="stat-label">Registered Voters</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">176,846</span>
+                <span class="stat-label">Polling Units</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">19</span>
+                <span class="stat-label">Political Parties</span>
+            </div>
+        </div>
+
         <!-- Countdown Section -->
-        <section class="countdown-section">
+        <section class="glass-section">
+            <h2 class="section-title">⏰ Time Left to Change the Narrative</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 0.95rem;">
+                <strong>Counting down to the end of the current administration's term</strong>
+            </p>
             <div id="alertBanner" class="alert-banner" style="display: none;">
                 <i class="fas fa-bell"></i>
                 <span id="alertMessage"></span>
             </div>
-
             <div class="countdown-grid">
                 <div class="countdown-unit">
                     <span class="countdown-number" id="days">0</span>
@@ -770,7 +1146,6 @@
                     <span class="countdown-label">Seconds</span>
                 </div>
             </div>
-
             <div class="action-section">
                 <button class="btn btn-primary" id="shareBtn">
                     <i class="fab fa-x-twitter"></i>
@@ -781,9 +1156,47 @@
                     <span>Copy Link</span>
                 </button>
                 <button class="btn btn-secondary" id="alertBtn">
-                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-calendar"></i>
                     <span>Set Alert</span>
                 </button>
+            </div>
+        </section>
+
+        <!-- Geopolitical Landscape -->
+        <section class="glass-section">
+            <h2 class="section-title">🗺️ Geopolitical Landscape</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 0.95rem;">
+                Click any zone to see dominant parties and electoral strongholds
+            </p>
+            <div class="regional-grid" id="regionalZones"></div>
+        </section>
+
+        <!-- Party Directory -->
+        <section class="glass-section">
+            <h2 class="section-title">🎭 Party Directory</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 0.95rem;">
+                Nigeria's 19 Registered Political Parties
+            </p>
+            <div class="party-grid" id="partyDirectory"></div>
+        </section>
+
+        <!-- INEC Registration Tracker -->
+        <section class="inec-tracker">
+            <h3 class="tracker-title">🗳️ Are You 2027 Ready?</h3>
+            <p class="tracker-subtitle">Complete Your Electoral Registration Before February 25, 2027 - INEC Election Date</p>
+            <div class="tracker-buttons">
+                <a href="https://www.inecnigeria.org/voter-registration/check-pvc-status/" target="_blank" class="cta-btn">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Check PVC Status</span>
+                </a>
+                <a href="https://www.inecnigeria.org/voter-registration/find-polling-unit/" target="_blank" class="cta-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Find Polling Unit</span>
+                </a>
+                <a href="https://www.inecnigeria.org/voter-registration/" target="_blank" class="cta-btn">
+                    <i class="fas fa-user-check"></i>
+                    <span>Register to Vote</span>
+                </a>
             </div>
         </section>
 
@@ -797,133 +1210,293 @@
         </section>
     </main>
 
+    <!-- Educational Slideshow Sidebar -->
+    <div class="slideshow-sidebar" id="slideshowSidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Why 2027 Matters</span>
+            <button class="sidebar-close" id="closeSidebar">&times;</button>
+        </div>
+        <div class="slide active">
+            <div class="slide-title">🔫 Insecurity Crisis</div>
+            <div class="slide-content">
+                Nigeria faces an unprecedented security challenge with multiple insurgent groups operating across the nation.
+            </div>
+            <div class="slide-stat">
+                <strong>200,000+ Nigerians Killed</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Deaths from insecurity since 2015</p>
+            </div>
+            <div class="slide-stat">
+                <strong>10 Million Internally Displaced</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Fleeing violence and insecurity</p>
+            </div>
+            <div class="slide-stat">
+                <strong>80% by Boko Haram/ISWAP</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Terrorism deaths accountability</p>
+            </div>
+            <div class="slide-source">
+                Sources: <a href="https://punchng.com" target="_blank">Punch NG</a>, <a href="https://saharareporters.com" target="_blank">Sahara Reporters</a>
+            </div>
+        </div>
+
+        <!-- Slide 2: Inflation Crisis -->
+        <div class="slide">
+            <div class="slide-title">📈 Inflation Crisis</div>
+            <div class="slide-content">
+                Nigeria's inflation rate has reached historic levels, eroding purchasing power and pushing millions into poverty.
+            </div>
+            <div class="slide-stat">
+                <strong>33.75% Inflation Rate</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">December 2024 - Highest in 18 years</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Food Prices Up 40%</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Average Nigerian struggling to feed family</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Real Wages Declining</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Workers earning less in real terms</p>
+            </div>
+            <div class="slide-source">
+                Source: <a href="https://saharareporters.com" target="_blank">Sahara Reporters</a> (CBN Data)
+            </div>
+        </div>
+
+        <!-- Slide 3: Poverty -->
+        <div class="slide">
+            <div class="slide-title">💔 Extreme Poverty</div>
+            <div class="slide-content">
+                Nearly half of Nigeria's population lives in extreme poverty, struggling to meet basic needs.
+            </div>
+            <div class="slide-stat">
+                <strong>44.9% Poverty Rate</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">99 Million Nigerians below $1.90/day</p>
+            </div>
+            <div class="slide-stat">
+                <strong>₦70,000 Minimum Wage</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">vs ₦300,000+ monthly cost of living</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Unemployment: 5.1%</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Millions more underemployed</p>
+            </div>
+            <div class="slide-source">
+                Source: <a href="https://punchng.com" target="_blank">Punch NG</a>, World Bank 2024
+            </div>
+        </div>
+
+        <!-- Slide 4: Fuel & Energy -->
+        <div class="slide">
+            <div class="slide-title">⛽ Fuel Price Explosion</div>
+            <div class="slide-content">
+                Fuel prices have skyrocketed, affecting transportation, electricity, and all goods.
+            </div>
+            <div class="slide-stat">
+                <strong>618% Price Increase</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">From ₦187/liter (2023) to ₦1,350/liter (2024)</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Electricity Crisis</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Power outages affecting businesses & homes</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Transportation Costs Up</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Making goods, services unaffordable</p>
+            </div>
+            <div class="slide-source">
+                Source: <a href="https://dailytrust.com" target="_blank">Daily Trust</a> Energy Report
+            </div>
+        </div>
+
+        <!-- Slide 5: Currency Collapse -->
+        <div class="slide">
+            <div class="slide-title">📉 Naira Collapse</div>
+            <div class="slide-content">
+                The Nigerian Naira has become one of the world's worst-performing currencies.
+            </div>
+            <div class="slide-stat">
+                <strong>312% Depreciation</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">From ₦340 (2023) to ₦1,400+ (2024)</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Worst Currency Globally</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">In 2024 performance ranking</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Import Costs Tripled</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Making foreign goods unaffordable</p>
+            </div>
+            <div class="slide-source">
+                Source: <a href="https://punchng.com" target="_blank">Punch NG</a> (CBN Data)
+            </div>
+        </div>
+
+        <!-- Slide 6: Corruption -->
+        <div class="slide">
+            <div class="slide-title">⚖️ Corruption & Theft</div>
+            <div class="slide-content">
+                Billions in public funds have been embezzled and misappropriated.
+            </div>
+            <div class="slide-stat">
+                <strong>₦1.3 Trillion Embezzled</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">From healthcare & education (2015-2024)</p>
+            </div>
+            <div class="slide-stat">
+                <strong>1,240+ Cases Filed</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Against government officials</p>
+            </div>
+            <div class="slide-stat">
+                <strong>₦7.5 Billion Missing</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">From Pension Scheme - unrecovered</p>
+            </div>
+            <div class="slide-source">
+                Source: <a href="https://saharareporters.com" target="_blank">Sahara Reporters</a> (ICPC/EFCC)
+            </div>
+        </div>
+
+        <!-- Slide 7: Massive Contracts & Allocation -->
+        <div class="slide">
+            <div class="slide-title">🏗️ Questionable Contracts</div>
+            <div class="slide-content">
+                Billions allocated to contracts with limited transparency and accountability across states.
+            </div>
+            <div class="slide-stat">
+                <strong>Lekki-Epe Expressway (Lagos)</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">₦500B+ allocated | Stalled work | 40% completion</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Lagos-Ibadan Expressway</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">₦300B+ | Repeated delays | Cost overruns documented</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Abandoned Projects Nationwide</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">₦700B+ | 200+ abandoned infrastructure sites</p>
+            </div>
+            <div class="slide-source">
+                Sources: <a href="https://saharareporters.com" target="_blank">Sahara Reporters</a> & <a href="https://dailytrust.com" target="_blank">Daily Trust</a> Investigations
+            </div>
+        </div>
+
+        <!-- Slide 8: Government Spending Excess -->
+        <div class="slide">
+            <div class="slide-title">💸 Wasteful Government Spending</div>
+            <div class="slide-content">
+                APC government spending examined (2023-2024): Massive expenditures with questionable public impact.
+            </div>
+            <div class="slide-stat">
+                <strong>Defense & Security Budget Bloat</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">₦3.2T allocated | Minimal insecurity improvement</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Presidential Travel & Accommodations</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">₦1.5B+ on foreign trips | Luxury hotel bills</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Consultant & Contract Fees</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">₦2.1B+ | Questionable service delivery documented</p>
+            </div>
+            <div class="slide-source">
+                Source: <a href="https://saharareporters.com" target="_blank">Sahara Reporters</a> Budget Analysis 2023-2024
+            </div>
+        </div>
+
+        <!-- Slide 9: Why Your Vote Matters -->
+        <div class="slide">
+            <div class="slide-title">🗳️ Your Vote Matters</div>
+            <div class="slide-content">
+                The 2027 election is your chance to choose leadership that can address these critical challenges.
+            </div>
+            <div class="slide-stat">
+                <strong>Accountability</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Vote for leaders committed to fighting corruption</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Economic Recovery</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Choose policies that restore the Naira and reduce inflation</p>
+            </div>
+            <div class="slide-stat">
+                <strong>Security & Stability</strong>
+                <p style="margin-top: 0.3rem; font-size: 0.9rem;">Support leaders with security solutions</p>
+            </div>
+            <div class="slide-source" style="margin-top: 2rem;">
+                <strong style="font-size: 1.1rem;">Your future. Your choice. Your vote.</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide Navigation -->
+    <div class="slide-nav" id="slideNav"></div>
+    <div class="slide-counter">
+        <span id="slideCounter">1</span> / 9
+    </div>
+
     <!-- State Details Modal -->
     <div id="stateModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" id="stateModalClose">&times;</button>
             <h2 class="modal-header" id="modalStateName">State Name</h2>
             
-            <div class="stat-item">
-                <div class="stat-label">Population (2023)</div>
-                <div class="stat-value" id="modalPopulation">--</div>
+            <div class="stat-item-modal">
+                <div class="stat-label-modal">Population (2023)</div>
+                <div class="stat-value-modal" id="modalPopulation">--</div>
             </div>
 
-            <div class="stat-item">
-                <div class="stat-label">Population Growth Rate</div>
-                <div class="stat-value" id="modalGrowthRate">--</div>
+            <div class="stat-item-modal">
+                <div class="stat-label-modal">Population Growth Rate</div>
+                <div class="stat-value-modal" id="modalGrowthRate">--</div>
             </div>
 
-            <div class="stat-item">
-                <div class="stat-label">Density (per km²)</div>
-                <div class="stat-value" id="modalDensity">--</div>
+            <div class="stat-item-modal">
+                <div class="stat-label-modal">Density (per km²)</div>
+                <div class="stat-value-modal" id="modalDensity">--</div>
             </div>
 
-            <div class="stat-item">
-                <div class="stat-label">Region</div>
-                <div class="stat-value" id="modalRegion" style="font-size: 1rem;">--</div>
+            <div class="stat-item-modal">
+                <div class="stat-label-modal">Region</div>
+                <div class="stat-value-modal" id="modalRegion" style="font-size: 1rem;">--</div>
             </div>
 
-            <div class="stat-item">
-                <div class="stat-label">FAAC Allocation (Monthly)</div>
-                <div class="stat-value" id="modalFAAC">--</div>
+            <div class="stat-item-modal">
+                <div class="stat-label-modal">FAAC Allocation (Monthly)</div>
+                <div class="stat-value-modal" id="modalFAAC">--</div>
             </div>
 
-            <div class="stat-item">
-                <div class="stat-label">Internal Revenue Generation (Annual)</div>
-                <div class="stat-value" id="modalIGR">--</div>
+            <div class="stat-item-modal">
+                <div class="stat-label-modal">Internal Revenue Generation (Annual)</div>
+                <div class="stat-value-modal" id="modalIGR">--</div>
             </div>
-        </div>
-    </div>
-
-    <!-- Alert Setting Modal -->
-    <div id="alertModal" class="modal">
-        <div class="modal-content alert-modal-content">
-            <button class="modal-close" id="alertModalClose">&times;</button>
-            <h2 class="modal-header" style="font-size: 1.8rem;">Set Countdown Alert</h2>
-            
-            <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.95rem;">
-                Get notified when the countdown reaches:
-            </p>
-
-            <div class="alert-option" data-days="30">
-                30 Days Remaining
-            </div>
-            <div class="alert-option" data-days="14">
-                2 Weeks Remaining
-            </div>
-            <div class="alert-option" data-days="7">
-                1 Week Remaining
-            </div>
-            <div class="alert-option" data-days="3">
-                3 Days Remaining
-            </div>
-            <div class="alert-option" data-days="1">
-                1 Day Remaining
-            </div>
-
-            <button class="btn btn-primary" id="confirmAlertBtn" style="width: 100%; margin-top: 1.5rem;">
-                <i class="fas fa-check"></i>
-                <span>Next: Add Email</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Email Subscription Modal -->
-    <div id="emailModal" class="modal">
-        <div class="modal-content alert-modal-content">
-            <button class="modal-close" id="emailModalClose">&times;</button>
-            <h2 class="modal-header" style="font-size: 1.6rem;">Receive Email Alerts</h2>
-            
-            <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.9rem;">
-                <i class="fas fa-envelope-open" style="color: var(--nigeria-green); margin-right: 0.5rem;"></i>
-                Get email notifications and add the countdown event to your Google Calendar.
-            </p>
-
-            <input 
-                type="email" 
-                id="emailInput" 
-                placeholder="Enter your email address" 
-                style="
-                    width: 100%;
-                    padding: 0.9rem;
-                    border: 2px solid var(--light-green);
-                    border-radius: 8px;
-                    font-family: 'Montserrat', sans-serif;
-                    font-size: 0.95rem;
-                    margin-bottom: 1rem;
-                    transition: border-color 0.3s ease;
-                "
-            >
-
-            <div style="display: flex; gap: 0.75rem; flex-direction: column;">
-                <button class="btn btn-primary" id="confirmEmailBtn" style="width: 100%;">
-                    <i class="fas fa-bell"></i>
-                    <span>Confirm & Set Alerts</span>
-                </button>
-                <button class="btn btn-secondary" id="skipEmailBtn" style="width: 100%;">
-                    <i class="fas fa-times"></i>
-                    <span>Skip Email</span>
-                </button>
-            </div>
-
-            <p style="color: var(--text-light); font-size: 0.8rem; margin-top: 1rem; text-align: center; line-height: 1.4;">
-                We'll send you email alerts on the countdown dates and provide a Google Calendar invite.
-            </p>
         </div>
     </div>
 
     <footer>
-        <div class="footer-divider"></div>
-        <div class="footer-disclaimer">
-            <i class="fas fa-info-circle"></i> Democratic Countdown Tracker - For Informational Purposes
-        </div>
-        <div class="footer-note">
-            This is an independent educational tool tracking Nigeria's political calendar.
-        </div>
+        <p class="footer-text">
+            <i class="fas fa-info-circle"></i> Nigeria Election Intelligence Hub - For Informational Purposes
+        </p>
+        <p class="footer-text" style="font-size: 0.8rem; opacity: 0.7;">
+            Powered by Statisense Data & INEC Official Information | Election Date: February 25, 2027
+        </p>
     </footer>
 
     <script>
-        // Nigerian States with Population Data (Statisense 2024) - Including FAAC & IGR
+        // Create Tick Sound (Web Audio API)
+        function createTickSound() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.1);
+        }
+
+        // Nigerian States with Population Data
         const nigerianStatesData = [
             { name: 'Lagos', population: 17_000_000, growth: 3.2, density: 4751, region: 'Southwest', area: 3577, faac: 18_500_000_000, igr: 72_400_000_000 },
             { name: 'Kano', population: 20_000_000, growth: 3.8, density: 1597, region: 'Northwest', area: 12530, faac: 22_100_000_000, igr: 8_900_000_000 },
@@ -964,14 +1537,46 @@
             { name: 'FCT', population: 3_281_000, growth: 5.2, density: 445, region: 'North-Central', area: 7369, faac: 4_200_000_000, igr: 19_600_000_000 }
         ];
 
-        // Populate states grid
+        // Regional Zones Data
+        const regionalZones = [
+            { name: 'North West', code: 'NW', dominant: 'APC/ADC Contested', states: '7 States', population: '45.2M' },
+            { name: 'North East', code: 'NE', dominant: 'APC Stronghold', states: '6 States', population: '18.6M' },
+            { name: 'North Central', code: 'NC', dominant: 'Competitive (APC/PDP)', states: '7 States', population: '24.1M' },
+            { name: 'South West', code: 'SW', dominant: 'APC Stronghold', states: '6 States', population: '38.8M' },
+            { name: 'South South', code: 'SS', dominant: 'PDP Stronghold', states: '6 States', population: '21.6M' },
+            { name: 'South East', code: 'SE', dominant: 'ADC Stronghold', states: '5 States', population: '20.5M' }
+        ];
+
+        // Political Parties Data
+        const politicalParties = [
+            { initials: 'APC', name: 'All Progressives Congress' },
+            { initials: 'PDP', name: 'Peoples Democratic Party' },
+            { initials: 'ADC', name: 'Alliance Democratic Congress' },
+            { initials: 'LP', name: 'Labour Party' },
+            { initials: 'NNPP', name: 'New Nigeria Peoples Party' },
+            { initials: 'APGA', name: 'All Progressives Grand Alliance' },
+            { initials: 'SDP', name: 'Social Democratic Party' },
+            { initials: 'ACC', name: 'African Action Congress' },
+            { initials: 'ACCORD', name: 'African Democratic Congress on Reforms' },
+            { initials: 'ZLP', name: 'Zenith Labour Party' },
+            { initials: 'BAP', name: 'Better Alternative Party' },
+            { initials: 'PRP', name: 'Peoples Redemption Party' },
+            { initials: 'YPP', name: 'Young Progressives Party' },
+            { initials: 'UDP', name: 'United Democratic Party' },
+            { initials: 'AA', name: 'Action Alliance' },
+            { initials: 'LPNP', name: 'Labour Party of Nigeria (Alt)' },
+            { initials: 'HOPE', name: 'Hope for Nigeria Movement' },
+            { initials: 'ABAT', name: 'Abia Progressive Alliance' },
+            { initials: 'UPP', name: 'United Progressives Party' }
+        ];
+
+        // Populate States Grid
         function populateStates() {
             const grid = document.getElementById('statesGrid');
             nigerianStatesData.forEach((state, index) => {
                 const tag = document.createElement('div');
                 tag.className = 'state-tag';
                 tag.innerHTML = `<span>${state.name}</span>`;
-                tag.style.animationDelay = `${index * 0.05}s`;
                 tag.addEventListener('click', () => showStateModal(state));
                 grid.appendChild(tag);
             });
@@ -1001,110 +1606,44 @@
             }
         });
 
-        // Alert System
-        let selectedAlertDays = null;
-
-        document.getElementById('alertBtn').addEventListener('click', () => {
-            document.getElementById('alertModal').classList.add('show');
-        });
-
-        document.getElementById('alertModalClose').addEventListener('click', () => {
-            document.getElementById('alertModal').classList.remove('show');
-        });
-
-        document.getElementById('emailModalClose').addEventListener('click', () => {
-            document.getElementById('emailModal').classList.remove('show');
-        });
-
-        document.querySelectorAll('.alert-option').forEach(option => {
-            option.addEventListener('click', () => {
-                document.querySelectorAll('.alert-option').forEach(o => o.classList.remove('selected'));
-                option.classList.add('selected');
-                selectedAlertDays = parseInt(option.dataset.days);
+        // Populate Regional Zones
+        function populateRegionalZones() {
+            const container = document.getElementById('regionalZones');
+            container.innerHTML = '';
+            regionalZones.forEach((zone, index) => {
+                const zoneDiv = document.createElement('div');
+                zoneDiv.className = 'regional-zone';
+                zoneDiv.innerHTML = `
+                    <div class="zone-name">${zone.code}</div>
+                    <div class="zone-info">${zone.states}</div>
+                    <div class="zone-info">Pop: ${zone.population}</div>
+                    <div class="zone-tooltip">
+                        <i class="fas fa-crown"></i> ${zone.dominant}
+                    </div>
+                `;
+                container.appendChild(zoneDiv);
             });
-        });
-
-        document.getElementById('confirmAlertBtn').addEventListener('click', () => {
-            if (selectedAlertDays !== null) {
-                document.getElementById('alertModal').classList.remove('show');
-                document.getElementById('emailModal').classList.add('show');
-            } else {
-                showToast('Please select an alert option');
-            }
-        });
-
-        document.getElementById('confirmEmailBtn').addEventListener('click', () => {
-            const email = document.getElementById('emailInput').value.trim();
-            if (validateEmail(email)) {
-                setupEmailAlerts(email, selectedAlertDays);
-            } else {
-                showToast('Please enter a valid email address');
-            }
-        });
-
-        document.getElementById('skipEmailBtn').addEventListener('click', () => {
-            if (selectedAlertDays !== null) {
-                localStorage.setItem('countdownAlert', selectedAlertDays);
-                showToast(`Alert set for ${selectedAlertDays} days remaining!`);
-                document.getElementById('emailModal').classList.remove('show');
-                selectedAlertDays = null;
-            }
-        });
-
-        // Email validation
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
         }
 
-        // Setup email alerts and Google Calendar
-        function setupEmailAlerts(email, days) {
-            localStorage.setItem('countdownAlert', days);
-            localStorage.setItem('countdownAlertEmail', email);
-            localStorage.setItem('countdownAlertEmails', JSON.stringify([email]));
-
-            // Generate Google Calendar URL
-            const eventTitle = `Presidential Transition Countdown - ${days} Days`;
-            const targetDate = new Date('2027-01-16T08:00:00');
-            const alertDate = new Date(targetDate);
-            alertDate.setDate(alertDate.getDate() - days);
-            
-            const calendarUrl = generateGoogleCalendarUrl(eventTitle, alertDate);
-
-            // Show confirmation with calendar link
-            showToast(`✅ Alert confirmed for ${email}!`);
-            
-            // Open calendar invitation
-            setTimeout(() => {
-                showToast('📅 Opening Google Calendar invite...');
-                window.open(calendarUrl, '_blank');
-            }, 1000);
-
-            document.getElementById('emailModal').classList.remove('show');
-            selectedAlertDays = null;
-        }
-
-        // Generate Google Calendar URL
-        function generateGoogleCalendarUrl(title, date) {
-            const startDate = date.toISOString().split('T')[0].replace(/-/g, '');
-            const endDate = new Date(date.getTime() + 3600000).toISOString().split('T')[0].replace(/-/g, '');
-            
-            const params = new URLSearchParams({
-                action: 'TEMPLATE',
-                text: title,
-                dates: `${startDate}/${endDate}`,
-                details: 'Democratic Countdown Tracker - Presidential Transition Alert',
-                location: 'Nigeria',
-                trp: 'true'
+        // Populate Party Directory
+        function populatePartyDirectory() {
+            const container = document.getElementById('partyDirectory');
+            container.innerHTML = '';
+            politicalParties.forEach((party) => {
+                const partyCard = document.createElement('div');
+                partyCard.className = 'party-card';
+                partyCard.innerHTML = `
+                    <div class="party-initials">${party.initials}</div>
+                    <div class="party-name">${party.name}</div>
+                `;
+                partyCard.addEventListener('click', () => showToast(`${party.name} (${party.initials})`));
+                container.appendChild(partyCard);
             });
-
-            return `https://calendar.google.com/calendar/u/0/r/eventedit?${params.toString()}`;
         }
 
-        // Countdown Timer with Alert System
+        // Countdown Timer with Sound
         function startCountdown() {
-            const targetDate = new Date('2027-01-16T08:00:00').getTime();
-            let lastAlertedDays = -1;
+            const targetDate = new Date('2027-02-25T08:00:00').getTime();
 
             function updateCountdown() {
                 const now = new Date().getTime();
@@ -1116,35 +1655,22 @@
                     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                    updateDisplay('days', days);
-                    updateDisplay('hours', hours);
-                    updateDisplay('minutes', minutes);
-                    updateDisplay('seconds', seconds);
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-                    // Check for alert
-                    const alertDays = localStorage.getItem('countdownAlert');
-                    if (alertDays && days === parseInt(alertDays) && lastAlertedDays !== days) {
-                        triggerAlert(days);
-                        lastAlertedDays = days;
+                    // Play tick sound
+                    try {
+                        createTickSound();
+                    } catch (e) {
+                        // Audio context may fail in some browsers, continue anyway
                     }
                 } else {
-                    document.getElementById('days').textContent = '0';
-                    document.getElementById('hours').textContent = '0';
-                    document.getElementById('minutes').textContent = '0';
-                    document.getElementById('seconds').textContent = '0';
-                }
-            }
-
-            function updateDisplay(id, value) {
-                const element = document.getElementById(id);
-                const newValue = String(value).padStart(2, '0');
-                
-                if (element.textContent !== newValue) {
-                    element.textContent = newValue;
-                    element.closest('.countdown-unit').classList.add('updated');
-                    setTimeout(() => {
-                        element.closest('.countdown-unit').classList.remove('updated');
-                    }, 500);
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
                 }
             }
 
@@ -1152,142 +1678,98 @@
             setInterval(updateCountdown, 1000);
         }
 
-        // Trigger Alert
-        function triggerAlert(days) {
-            const banner = document.getElementById('alertBanner');
-            const message = document.getElementById('alertMessage');
-            
-            if (days === 1) {
-                message.textContent = '⏰ FINAL DAY! The presidential transition is tomorrow!';
-            } else if (days === 3) {
-                message.textContent = '🚨 Alert: Only 3 days until the presidential transition!';
-            } else if (days === 7) {
-                message.textContent = '📢 Alert: One week remaining until the presidential transition!';
-            } else if (days === 14) {
-                message.textContent = '📣 Alert: Two weeks remaining until the presidential transition!';
-            } else if (days === 30) {
-                message.textContent = '📢 Alert: One month remaining until the presidential transition!';
+        // Slideshow Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function initSlideshow() {
+            // Create slide navigation dots
+            const navContainer = document.getElementById('slideNav');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToSlide(i));
+                navContainer.appendChild(dot);
             }
 
-            banner.style.display = 'flex';
-            
-            // Browser notification
-            if ('Notification' in window && Notification.permission === 'granted') {
-                new Notification('Countdown Alert', {
-                    body: message.textContent,
-                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23008751" width="100" height="100"/><text x="50" y="50" font-size="50" fill="white" text-anchor="middle" dy=".3em">⏰</text></svg>'
-                });
-            }
+            // Auto-advance slides every 5 seconds
+            setInterval(nextSlide, 5000);
 
-            // Email notification simulation
-            const userEmail = localStorage.getItem('countdownAlertEmail');
-            if (userEmail) {
-                sendEmailAlert(userEmail, days, message.textContent);
-            }
-
-            showToast('Alert: ' + message.textContent);
-        }
-
-        // Simulate email alert (in production, this would call a backend API)
-        function sendEmailAlert(email, days, message) {
-            // Store alert log in localStorage
-            const alertLogs = JSON.parse(localStorage.getItem('alertLogs') || '[]');
-            alertLogs.push({
-                email: email,
-                days: days,
-                message: message,
-                timestamp: new Date().toLocaleString(),
-                subject: `Presidential Transition Countdown: ${days} Days Remaining`
+            // Close button functionality
+            document.getElementById('closeSidebar').addEventListener('click', () => {
+                document.getElementById('slideshowSidebar').classList.add('hidden');
             });
-            localStorage.setItem('alertLogs', JSON.stringify(alertLogs));
-
-            // In a production environment, you would send an email via API:
-            // fetch('/api/send-email', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({
-            //         to: email,
-            //         subject: `Presidential Transition Countdown: ${days} Days Remaining`,
-            //         body: message
-            //     })
-            // });
-
-            showToast(`📧 Email alert sent to ${email}!`);
         }
 
-        // Request notification permission
-        if ('Notification' in window && Notification.permission === 'default') {
-            Notification.requestPermission();
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.querySelectorAll('.slide-dot').forEach(dot => dot.classList.remove('active'));
+            
+            slides[n].classList.add('active');
+            document.querySelectorAll('.slide-dot')[n].classList.add('active');
+            document.getElementById('slideCounter').textContent = n + 1;
         }
 
-        // Share functionality
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Google Calendar Alert
+        document.getElementById('alertBtn').addEventListener('click', () => {
+            const eventTitle = 'Nigeria 2027 Presidential Election';
+            const eventDate = '20270225';
+            
+            const calendarUrl = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${encodeURIComponent(eventTitle)}&dates=${eventDate}/${eventDate}&details=The+2027+Nigerian+Presidential+election+is+a+critical+turning+point+for+the+nation.+Your+vote+matters.+INEC+Election+Date.&trp=true`;
+            
+            window.open(calendarUrl, '_blank');
+            showToast('📅 Google Calendar invite opened!');
+        });
+
+        // Share Functionality
         document.getElementById('shareBtn').addEventListener('click', function() {
             const daysVal = document.getElementById('days').textContent;
             const hoursVal = document.getElementById('hours').textContent;
             const minutesVal = document.getElementById('minutes').textContent;
             
             const shareText = encodeURIComponent(
-                `⏰ ${daysVal}d ${hoursVal}h ${minutesVal}m remaining until the presidential transition. Join the countdown! #NigeriaPolitics #DemocraticCountdown`
+                `⏰ ${daysVal}d ${hoursVal}h ${minutesVal}m remaining until Nigeria's 2027 election. The time to change the narrative is now! Check out the Election Intelligence Hub. #NigeriaPolitics #2027Election`
             );
             
             const twitterUrl = `https://twitter.com/intent/tweet?text=${shareText}&url=${window.location.href}`;
-            window.open(twitterUrl, '_blank', 'width=550,height=420');
-            
+            window.open(twitterUrl, '_blank');
             showToast('Shared on X!');
         });
 
-        // Copy link functionality
-        document.getElementById('copyBtn').addEventListener('click', function() {
+        // Copy Link
+        document.getElementById('copyBtn').addEventListener('click', () => {
             navigator.clipboard.writeText(window.location.href).then(() => {
                 showToast('Link copied to clipboard!');
-            }).catch(() => {
-                showToast('Failed to copy link');
             });
         });
 
-        // Toast notification
+        // Toast Notification
         function showToast(message) {
             const toast = document.createElement('div');
             toast.className = 'toast';
             toast.textContent = message;
             document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.remove();
-            }, 3000);
-        }
-
-        // Create floating particles for animated background
-        function createParticles() {
-            const container = document.querySelector('.bg-animated');
-            const particleCount = 30;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                const dot = document.createElement('div');
-                dot.className = 'particle-dot';
-                
-                const randomLeft = Math.random() * 100;
-                const randomDuration = 10 + Math.random() * 20;
-                const randomDelay = Math.random() * 5;
-
-                particle.style.left = randomLeft + '%';
-                particle.style.top = '0';
-                dot.style.animationDuration = randomDuration + 's';
-                dot.style.animationDelay = randomDelay + 's';
-
-                particle.appendChild(dot);
-                container.appendChild(particle);
-            }
+            setTimeout(() => toast.remove(), 3000);
         }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             populateStates();
+            populateRegionalZones();
+            populatePartyDirectory();
             startCountdown();
-            createParticles();
+            initSlideshow();
         });
     </script>
 </body>
