@@ -1,0 +1,12 @@
+{
+  "instructions": "TEMPLATE ONLY. Replace counts with actual 2027 results, include every contesting party, and replace the source URL with the actual public result sheet before uploading. Exact directory names are required.",
+  "results": [{
+    "state": "Lagos",
+    "lga": "Ikeja",
+    "registered": 0,
+    "accredited": 0,
+    "rejected": 0,
+    "votes": {"REPLACE": 0},
+    "source": "REPLACE_WITH_PUBLIC_HTTPS_RESULT_SHEET_URL"
+  }]
+}
