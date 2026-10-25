@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+      if (/(?:invite|recovery|confirmation|access)_token=/.test(window.location.hash)) {
+        window.location.replace('/results.html' + window.location.hash);
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time For You To Decide 2027</title>
@@ -1099,7 +1104,7 @@
     <header>
         <h1>Time For You To Decide </h1>
         <p class="tagline">2027 Presidential Election Dashboard & Countdown Tracker</p>
-    </header>
+    <a href="/results.html" style="display:inline-block;margin-top:20px;padding:12px 24px;background:white;color:#005c3a;border-radius:8px;font-weight:700;text-decoration:none">Explore 2027 results · All 774 LGAs →</a></header>
 
     <main>
         <!-- Quick Stats Bar -->

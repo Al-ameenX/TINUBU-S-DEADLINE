@@ -1,0 +1,29 @@
+{
+  "name": "nigeria-election-observatory",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Al-ameenX/TINUBU-S-DEADLINE/issues"
+  },
+  "homepage": "https://github.com/Al-ameenX/TINUBU-S-DEADLINE#readme",
+  "dependencies": {
+    "@netlify/database": "^2.0.1",
+    "@netlify/functions": "^6.0.3",
+    "@netlify/identity": "^2.0.0",
+    "drizzle-orm": "^1.0.0-beta.22"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "drizzle-kit": "^1.0.0-beta.22",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  },
+  "type": "module",
+  "private": true
+}
